@@ -1,0 +1,128 @@
+<div class="container bg-light mt-2">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-center">User Add Form</h3>
+  
+        <hr />
+  
+        <form [formGroup]="formDetails">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <span
+              *ngIf="
+                submitted ||
+                form['username'].touched ||
+                (form['username'].dirty && form['username'].invalid)
+              "
+              class="info-msg text-danger px-2"
+            >
+              <small
+                *ngIf="form['username'].errors && form['username'].errors?.['required']"
+                >* This is the required field.</small
+              >
+              <small
+                *ngIf="form['username'].errors && form['username'].errors?.['minlength']"
+                >* Should have at least 4 characters.</small
+              >
+            </span>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              aria-describedby="name"
+              placeholder="Enter name"
+              formControlName="username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <span
+              *ngIf="
+                submitted ||
+                form['password'].touched ||
+                (form['password'].dirty && form['password'].invalid)
+              "
+              class="info-msg text-danger px-2"
+            >
+              <small
+                *ngIf="form['password'].errors && form['password'].errors?.['required']"
+                >* This is the required field.</small
+              >
+              <small
+                *ngIf="form['password'].errors && form['password'].errors?.['minlength']"
+                >* Should have at least 4 characters.</small
+              >
+            </span>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter password"
+              formControlName="password"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <span
+              *ngIf="
+                submitted ||
+                form['email'].touched ||
+                (form['email'].dirty && form['email'].invalid)
+              "
+              class="info-msg text-danger px-2"
+            >
+              <small
+                *ngIf="form['email'].errors && form['email'].errors?.['required']"
+                >* This is the required field.</small
+              >
+              <small
+                *ngIf="form['email'].errors && form['email'].errors?.['minlength']"
+                >* Should have at least 4 characters.</small
+              >
+            </span>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              formControlName="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="contact" class="form-label">Contact</label>
+            <span
+              *ngIf="
+                submitted ||
+                form['contactNumber'].touched ||
+                (form['contactNumber'].dirty && form['contactNumber'].invalid)
+              "
+              class="info-msg text-danger px-2"
+            >
+              <small
+                *ngIf="form['contactNumber'].errors && form['contactNumber'].errors?.['required']"
+                >* This is the required field.</small
+              >
+              <small
+                *ngIf="form['contactNumber'].errors && form['contactNumber'].errors?.['minlength']"
+                >* Phone number must have 10 digits</small
+              >
+            </span>
+            <input
+              type="number"
+              class="form-control"
+              id="contact"
+              placeholder="Enter your phone number"
+              formControlName="contactNumber"
+            />
+          </div>
+          <button
+            type="button"
+            (click)="onEditDetails()"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
