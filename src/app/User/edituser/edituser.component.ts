@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -19,7 +19,8 @@ export class EdituserComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -59,15 +60,17 @@ export class EdituserComponent implements OnInit {
     this.userService.editUserDetailsByUserId(this.studentDetails.id, this.formDetails.value).subscribe(
       {
         next : (value) => {
-          this.onGoBack();
+          this.onGoback();
         },
       }
     );
   }
 
-  onGoBack() {
-    this.location.back();
+  onGoback() {
+    this.router.navigate(['/listuser']);
   }
+
+  
 
 
 

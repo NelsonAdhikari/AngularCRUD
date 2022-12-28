@@ -11,6 +11,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 import { EdituserComponent } from './User/edituser/edituser.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EdituserComponent } from './User/edituser/edituser.component';
     ViewuserComponent,
     HeadernavComponent,
     SidebarComponent,
-    EdituserComponent
+    EdituserComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

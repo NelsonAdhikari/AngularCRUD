@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/service/user.service';
 
@@ -22,7 +23,8 @@ isSubmitting: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private location: Location
+    private location: Location,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -79,4 +81,7 @@ isSubmitting: boolean = false;
     });
   }
 
+  onGoback(){
+    this.router.navigate(['/listuser']);
+  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeadernavComponent } from './headernav/headernav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'viewuser/:id' , component:ViewuserComponent
   },
+  {
+    path:'dashboard' ,  component:DashboardComponent
+  },
+  
   {
     path:'headernav' , component:HeadernavComponent
   },

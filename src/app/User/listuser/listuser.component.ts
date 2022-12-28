@@ -51,6 +51,8 @@ export class ListuserComponent implements OnInit {
     this.router.navigate(['/viewuser', id]);
   }
 
+  
+
   // onView(id: any){
     
   // }
